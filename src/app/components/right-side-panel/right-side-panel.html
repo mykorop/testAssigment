@@ -1,0 +1,74 @@
+<div class="sidenav_container" [@onSideNavChange]="sideNavState ? 'open' : 'close'">
+  <div fxLayout="column" fxLayoutGap="10px" style="height: 100%;">
+
+    <div class="p-3">
+      <h3 class="side-menu-title mt-3 d-flex align-items-center justify-content-between" *ngIf="showContent">
+        <span>Brand selection</span>
+        <button mat-icon-button (click)="onSineNavToggle()">
+          <mat-icon *ngIf="sideNavState">arrow_right</mat-icon>
+        </button>
+      </h3>
+
+      <mat-accordion [multi]="true" [@animateText]="showContent ? 'show' : 'hide'">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <b>Own brands</b>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="d-flex flex-column">
+            <mat-slide-toggle>All parts</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1">Audi</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1" [checked]="true">Common</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1" [checked]="true">SEAT</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1">Skoda</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1">VW CV</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1" [checked]="true">VW PC</mat-slide-toggle>
+          </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <b>Internet sellers</b>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="w-100">
+            <mat-label>Additional details</mat-label>
+            <input matInput placeholder="Additional details">
+          </mat-form-field>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <b>Aftermarket distributors</b>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="d-flex flex-column">
+            <mat-slide-toggle>AM Dist. index</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1">AM Dist. Max</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1" [checked]="true">AM Dist. Min</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1">Matthies</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1">Stahgruber</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1">TROST</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1" [checked]="true">Wessels & Muller</mat-slide-toggle>
+            <mat-slide-toggle class="mt-1">Wutschner</mat-slide-toggle>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+  <span class="spacer"></span>
+
+  <div fxLayout="row" fxLayoutAlign="end center" class="toggleButton">
+    <button mat-icon-button (click)="onSineNavToggle()">
+      <mat-icon *ngIf="!sideNavState">arrow_left</mat-icon>
+    </button>
+  </div>
+</div>

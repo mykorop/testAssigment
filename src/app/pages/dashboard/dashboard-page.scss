@@ -1,0 +1,26 @@
+.dashboard-drawer {
+  height: 100%;
+  max-width: 100vw;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+.toggle-left-side-panel-container {
+  position: absolute;
+  top: 2.5rem;
+  left: 1rem;
+  z-index: 10000;
+}
+
+.toggle-right-side-panel-container {
+  position: absolute;
+  top: 2.5rem;
+  right: 1rem;
+  z-index: 10000;
+}

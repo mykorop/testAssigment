@@ -1,0 +1,94 @@
+<div class="sidenav_container"  [@onSideNavChange]="sideNavState ? 'open' : 'close'">
+  <div fxLayout="column" fxLayoutGap="10px" style="height: 100%;">
+
+    <div class="p-3">
+      <h3 class="side-menu-title mt-3 d-flex align-items-center justify-content-between" *ngIf="showContent">
+        <button mat-icon-button (click)="onSineNavToggle()">
+          <mat-icon *ngIf="sideNavState">arrow_left</mat-icon>
+        </button>
+        <span>Chart settings</span>
+      </h3>
+
+      <mat-accordion [multi]="true" [@animateText]="showContent ? 'show' : 'hide'">
+        <mat-expansion-panel [expanded]="true" >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <b>Basic settings</b>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Country</mat-label>
+            <mat-select [value]="'Poland'">
+              <mat-option *ngFor="let country of countries" [value]="country">
+                {{country}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <b>Price Level</b>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="w-100">
+            <mat-label>Enter price level</mat-label>
+            <input matInput placeholder="Enter price level" [value]="50">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="w-100">
+            <mat-label>Additional details</mat-label>
+            <input matInput placeholder="Additional details">
+          </mat-form-field>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <b>Chart Type</b>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="w-100">
+            <mat-label>Enter chart type</mat-label>
+            <input matInput placeholder="Enter chart type">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="w-100">
+            <mat-label>Additional details</mat-label>
+            <input matInput placeholder="Additional details">
+          </mat-form-field>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <b>Show brands</b>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="w-100">
+            <mat-label>Enter brand name</mat-label>
+            <input matInput placeholder="Enter brand name">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="w-100">
+            <mat-label>Additional details</mat-label>
+            <input matInput placeholder="Additional details">
+          </mat-form-field>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+  <span class="spacer"></span>
+
+  <div fxLayout="row" fxLayoutAlign="end center" class="toggleButton">
+    <button mat-icon-button (click)="onSineNavToggle()">
+      <mat-icon *ngIf="!sideNavState">arrow_right</mat-icon>
+    </button>
+  </div>
+</div>

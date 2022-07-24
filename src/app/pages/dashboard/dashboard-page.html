@@ -1,0 +1,17 @@
+<div class="main-container position-relative">
+  <app-menu-component></app-menu-component>
+
+  <mat-drawer-container class="dashboard-drawer" autosize>
+    <mat-drawer #leftDrawer mode="side" opened class="side-panel-width">
+      <app-left-side-panel-component></app-left-side-panel-component>
+    </mat-drawer>
+
+    <mat-drawer #rightDrawer position="end" mode="side" opened class="side-panel-width">
+      <app-right-side-panel-component></app-right-side-panel-component>
+    </mat-drawer>
+
+    <mat-drawer-content [@onMainContentChangeLeft]="onSideNavChangeLeft ? 'open': 'close'" [@onMainContentChangeRight]="onSideNavChangeRight ? 'open': 'close'">
+      <app-chart-component class="w-100 mt-3" (chartClickedEvent)="toggleChatView($event)"></app-chart-component>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
