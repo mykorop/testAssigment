@@ -1,3 +1,5 @@
+![Screenshot_1](https://user-images.githubusercontent.com/59149991/180659657-b61575c5-4ce4-4908-9a30-5a72856e1a5b.png)
+
 # TestAssigment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
